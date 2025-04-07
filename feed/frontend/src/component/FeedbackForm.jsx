@@ -30,7 +30,7 @@ export default function FeedbackForm() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/submit-feedback", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/submit-feedback`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -53,7 +53,7 @@ export default function FeedbackForm() {
   const fetchFeedbacks = async () => {
     setLoadingFeedbacks(true);
     try {
-      const res = await fetch("http://localhost:5000/feedbacks");
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/feedbacks`);
       const data = await res.json();
       setFeedbacks(data);
     } catch (err) {
