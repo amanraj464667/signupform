@@ -14,7 +14,7 @@ const Signup = () => {
     const handleSubmit = async (e) =>{
       e.preventDefault()//refersh hone se rokta h 
       try {
-        const res = await axios.post('http://localhost:5000/auth/signup', { name, email, password });
+        const res = await axios.post('https://signupform-9ocr.onrender.com/auth/signup', { name, email, password });
         console.log(res);
         
         if(res.data.message==="Signup successful"){
